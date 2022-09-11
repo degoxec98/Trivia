@@ -1,22 +1,27 @@
+nombre = ""
 
 def logo(nombreTrivia): 
-  print("_____________________________________________________")
-  print("_____________________________________________________\n")
-  print("************** ",nombreTrivia," **************")
-  print("_____________________________________________________")
-  print("_____________________________________________________")
+  print("______________________________________________________")
+  print("______________________________________________________\n")
+  print("***************",nombreTrivia,"***************")
+  print("______________________________________________________")
+  print("______________________________________________________")
 
+def validarRespuesta():
+  respuesta = input("Elige una respuesta: ").lower()
+  while respuesta not in ("a", "b", "c", "d"):
+    respuesta = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta: ").lower()
+  return respuesta
 
 def menuTrivia():
-  print("\n")
-  print("********* Elige un Trivia *********\n")
+  nombre = input("\n¡Hola! Por favor ingresa tu nombre: ")
+  print("\nBienvenido "+nombre+", por favor elige una de las siguientes trivias escribiendo la letra de la trivia y presionando 'Enter' para enviar tu opción:\n")
   print("a. Trivia 01")
   print("b. Trivia 02")
   print("c. Trivia 03")
-  print("d. Trivia 04")
-  print("e. Trivia RANDOM")
-  option = input("Escoga una opción: ")
-  return option
+  print("d. Trivia RANDOM")
+  respuesta = validarRespuesta()
+  return respuesta
 
 def pregunta(number, question):
   print(number, question[0])
